@@ -1,6 +1,9 @@
 import Feed from "@/components/Feed";
+import { pool } from "@/utils/database";
 
-export default function Home() {
+const Home = async () => {
+  // const res = await pool.query(`SELECT * FROM user`);
+  // console.log(res);
   return (
     <section className="w-full flex-center flex-col">
       <h1 className="head_text text-center">
@@ -15,4 +18,6 @@ export default function Home() {
       <Feed />
     </section>
   );
-}
+};
+
+export default Home;
