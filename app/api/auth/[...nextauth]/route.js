@@ -11,7 +11,7 @@ const handler = NextAuth({
   ],
   callbacks: {
     async session({ session }) {
-      // store the user id from MongoDB to session
+      // store the user id from postgres to session
       const sessionUser = await pool.query(
         `SELECT * FROM users WHERE email = $1`,
         [session.user.email]
